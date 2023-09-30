@@ -2,6 +2,15 @@
 #
 # Copyright (C) 2023  Jacob Koziej <jacobkoziej@gmail.com>
 
+BLACK ?= black
+BLACKFLAGS +=                       \
+	--line-length 79            \
+	--skip-string-normalization
+
+MDFORMAT ?= mdformat
+MDFORMATFLAGS +=  \
+	--wrap 72
+
 PIPCOMPILE ?= pip-compile
 PIPCOMPILEFLAGS +=        \
 	--allow-unsafe    \
@@ -13,6 +22,12 @@ PIPCOMPILEFLAGS +=        \
 
 .PHONY: all
 all:
+
+
+.PHONY: fmt
+fmt:
+	$(BLACK) $(BLACKFLAGS) .
+	$(MDFORMAT) $(MDFORMATFLAGS) README.md
 
 
 .PHONY: dev-requirements.txt
