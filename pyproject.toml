@@ -29,5 +29,17 @@ dev = [
 	'ruff',
 ]
 
+[tool.black]
+line-length               = 79
+skip-string-normalization = true
+verbose                   = true
+
+[tool.pip-tools]
+allow-unsafe    = true
+generate-hashes = true
+strip-extras    = false
+upgrade         = true
+verbose         = true
+
 [tool.setuptools.packages.find]
 where = ['src']
