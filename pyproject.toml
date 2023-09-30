@@ -1,0 +1,33 @@
+[build-system]
+requires      = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name        = 'cogx'
+description = 'cog extensions'
+version     = '0.0.0'
+
+authors = [
+	{name = 'Jacob Koziej', email = 'jacobkoziej@gmail.com'},
+]
+license = {'text' = 'GPL-3.0-or-later'}
+
+requires-python = '>=3.11'
+dependencies = [
+	'cogapp',
+]
+
+[project.urls]
+repo = 'https://github.com/jacobkoziej/cogx'
+
+[project.optional-dependencies]
+dev = [
+	'black',
+	'mdformat-gfm',
+	'pip-tools',
+	'pre-commit',
+	'ruff',
+]
+
+[tool.setuptools.packages.find]
+where = ['src']
