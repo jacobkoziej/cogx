@@ -18,5 +18,20 @@ __version__: typing.Final[str] = '0.0.0'
 DIRNAME: typing.Final[str] = os.path.dirname(cog.IN_FILE)
 
 
+def cat(files: list[str], *, relative: bool = True) -> None:
+    import os
+
+    if relative:
+        files = [os.path.join(DIRNAME, file) for file in files]
+
+    output: list[str] = []
+
+    for file in files:
+        with open(file) as f:
+            output += [f.read()]
+
+    cog.out('\n'.join(output))
+
+
 del os
 del typing
