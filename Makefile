@@ -19,13 +19,13 @@ all:
 
 .PHONY: fmt
 fmt:
-	$(BLACK) .
-	$(MDFORMAT) $(MDFORMATFLAGS) README.md
+	@$(BLACK) .
+	@$(MDFORMAT) $(MDFORMATFLAGS) README.md
 
 
 .PHONY: lint
 lint:
-	$(RUFF) check .
+	@$(RUFF) check .
 
 
 .PHONY: dev-requirements.txt
