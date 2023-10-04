@@ -5,6 +5,8 @@
 
 import typing
 
+from . import cog
+
 
 __author__: typing.Final[str] = 'Jacob Koziej'
 __version__: typing.Final[str] = '0.0.0'
