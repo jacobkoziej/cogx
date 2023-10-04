@@ -32,7 +32,6 @@ dev = [
 [tool.black]
 line-length               = 79
 skip-string-normalization = true
-verbose                   = true
 
 [tool.pip-tools]
 allow-unsafe    = true
