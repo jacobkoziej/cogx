@@ -10,6 +10,8 @@ MDFORMATFLAGS +=  \
 
 PIPCOMPILE ?= pip-compile
 
+RUFF ?= ruff
+
 
 .PHONY: all
 all:
@@ -19,6 +21,11 @@ all:
 fmt:
 	$(BLACK) .
 	$(MDFORMAT) $(MDFORMATFLAGS) README.md
+
+
+.PHONY: lint
+lint:
+	$(RUFF) check .
 
 
 .PHONY: dev-requirements.txt
